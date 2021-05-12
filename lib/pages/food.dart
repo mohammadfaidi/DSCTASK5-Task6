@@ -22,6 +22,9 @@ class _MyHomePageState extends State<food> {
   
   ];
    List number = ['1','2','3','4','5','6'];
+
+    List number2 = ['1','1','1','1','1','1'];
+
  String selectedNu = '1';
  String selectedNu2 = '1';
  String selectedNu3 = '1';
@@ -67,7 +70,7 @@ class _MyHomePageState extends State<food> {
  }
 
  
-Widget myCard({String img,String limt , String price , String name }){
+Widget myCard({String img,String limt , String price , String name,int index }){
 return Card(
  child: Container(
 width: MediaQuery.of(context).size.width,
@@ -130,7 +133,9 @@ value: no,
 ).toList(),
 onChanged: (value){
     setState(() {
-                  selectedNu = value;
+                //  selectedNu = value;
+                number2[index]=value;
+
 
 
     });
@@ -138,9 +143,14 @@ onChanged: (value){
 
 
 },
-value: selectedNu,
+
+//value: selectedNu,
+value :number2[index],
+
+
 ),
-                  Text("$limt",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),),
+                 // Text("$limt",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),),
+                 Text("$limt",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),),
 
                 ],
               ),
