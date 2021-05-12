@@ -12,7 +12,7 @@ class SignUp extends StatefulWidget {
 }
  
 class _MyHomePageState extends State<SignUp> {
- bool visbility = true ;
+ //bool visbility = true ;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -41,12 +41,12 @@ class _MyHomePageState extends State<SignUp> {
         //Text("Sign Up",style:TextStyle(fontSize: 23,fontWeight: FontWeight.bold,color: Colors.blue[800]),),
         SizedBox(height:30),
         
-    customTextFied("UserName",false,Icon(Icons.person)),
+    customTextFied(hint:"UserName",obsecure:false,icon:Icon(Icons.person),),
     SizedBox(height:30),
 
-    customTextFied("email",false,Icon(Icons.email)),
+    customTextFied(hint:"email",obsecure:false,icon:Icon(Icons.email),),
     SizedBox(height:30),
-    customTextFied("password",visbility,Icon(Icons.lock)),
+    customTextFied(hint:"password",obsecure:true,icon:Icon(Icons.lock), ),
         SizedBox(height:30),
 
         ElevatedButton(onPressed: (){
@@ -74,14 +74,21 @@ class _MyHomePageState extends State<SignUp> {
     
  }
 
- Widget customTextFied(hint,obsecure,icon){
+ Widget customTextFied({@required hint,@required obsecure,@required icon,}){
 return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: TextFormField(
           obscureText: obsecure,
           decoration: InputDecoration(
             hintText: '$hint',
-           // suffixIcon: IconButton(icon: ob, onPressed: onPressed),
+           // suffixIcon:IconButton(
+             // icon: Icon(vis?Icons.visibility_off:Icons.visibility),
+              //onPressed: (){
+               // setState(() {
+                 // vis = !vis;
+                //});
+              //},
+            //),
             prefixIcon: icon,
             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10)
             ),
