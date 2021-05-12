@@ -31,7 +31,7 @@ class _MyHomePageState extends State<food> {
  //var w = Colors.black;
  var r = Colors.redAccent;
  var b1 = Colors.blue;
- var g = Colors.yellow[200];
+ //var g = Colors.amberAccent;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ width: MediaQuery.of(context).size.width,
 height: 200,
 decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(20),
-    color: g,
+    color: Colors.amberAccent,
           
 ),
 child: Column(
@@ -131,7 +131,9 @@ value: selectedNu,
               ),
             Text("$price",style: TextStyle(fontSize: 15,fontWeight:FontWeight.bold,color:Colors.black),),
             SizedBox(height:20),
-         IconButton(icon: Icon(Icons.shopping_cart), onPressed: (){
+            Row(
+              children:[
+  IconButton(icon: Icon(Icons.shopping_cart), onPressed: (){
 
     Navigator.push(context,MaterialPageRoute(builder: (context)=>Data()
           
@@ -143,6 +145,20 @@ value: selectedNu,
          
          
          ),
+RaisedButton(onPressed: (){
+ Navigator.push(context,MaterialPageRoute(builder: (context)=>Data()
+          
+          )
+          
+          );
+
+},
+color:Colors.blue,
+child: Text("طلب المنتج",style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),),
+),
+              ]
+            ),
+       
             ],
           )
 ],
