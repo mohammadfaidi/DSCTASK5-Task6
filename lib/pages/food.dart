@@ -27,6 +27,7 @@ class _MyHomePageState extends State<food> {
  String selectedNu3 = '1';
  String selectedNu4 = '1';
   String selectedNu5 = '1';
+
  var b = Colors.black;
  //var w = Colors.black;
  var r = Colors.redAccent;
@@ -83,12 +84,26 @@ child: Column(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
 children: [
-    Container(
-child://Image.network('https://dlwaqty.com/storage/5790/0bcc41568a8f302ccd3c5196173a9b98_w750_h500.jpg',width: 220,height: 150,),
-        Image.asset(img,width: 220,height: 150,),
+    //Container(
+//child://Image.network('https://dlwaqty.com/storage/5790/0bcc41568a8f302ccd3c5196173a9b98_w750_h500.jpg',width: 220,height: 150,),
+     
+  //      Image.asset(img,width: 220,height: 150,),
 
-    ),
+    //),
 
+Container(
+  width: 220,
+  height: 150,
+  decoration: BoxDecoration(
+	shape: BoxShape.rectangle,
+	image: DecorationImage(
+	  //image: NetworkImage('https://googleflutter.com/sample_image.jpg'),
+    //Image.asset(img),
+    image:AssetImage(img),
+	  fit: BoxFit.fill
+	),
+  ),
+),
           Column(
             children: [
               Row(
